@@ -4,13 +4,15 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
-  transition: all 1s ease-out; }
+  transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: #fff;
-    transition: all 1s ease-out; }
+    transition: all 0.5s ease-out; }
+    .menu-btn .btn-line:hover {
+      background-color: #1976f0; }
   .menu-btn.close {
     transform: rotate(-180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
@@ -19,6 +21,66 @@
       opacity: 0; }
     .menu-btn.close .btn-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.8);
+    list-style: none;
+    transform: translate3d(100%, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translate3d(-100%, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 300px;
+      height: 300px;
+      background: url(../img/headshot.jpg);
+      background-size: center;
+      background-size: 120%;
+      background-position-x: -30px;
+      background-position-y: -140px;
+      border-radius: 50%;
+      border: solid 3px #fff; }
+      .menu-branding .portrait:hover {
+        border-color: #1976f0; }
+  .menu .nav-item {
+    transform: translate3d(0px, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    padding: 1 rem 0;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #1976f0; }
 
 * {
   box-sizing: border-box; }
@@ -42,7 +104,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(0, 0, 0, 0.5); }
+      background: rgba(0, 0, 0, 0.8); }
 
 h1,
 h2,
@@ -81,7 +143,7 @@ main {
       padding: 0.4rem; }
       main .icons a:hover {
         color: rgba(2, 2, 2, 0.89);
-        transition: all 1s ease-out; }
+        transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
