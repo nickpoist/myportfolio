@@ -1,5 +1,5 @@
-$primary-color: rgb(0, 0, 0);
-$secondary-color: rgba(2, 2, 2, 0.89);
+$primary-color: #565656;
+$secondary-color: #d7cec7;
 $show-home-image: true;
 $home-image: url(../img/cover.jpg);
 $background-opacity: 0.8;
@@ -26,5 +26,35 @@ $background-opacity: 0.8;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+}
+
+// Set Text
+@function set-text-color($color) {
+  @if (lightness($color) >40) {
+    @return #000000;
+  } @else {
+    @return #fff;
+  }
+}
+// Media Query Mixin
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and (min-width: 501px) and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
   }
 }

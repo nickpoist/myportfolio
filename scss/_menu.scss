@@ -98,9 +98,6 @@
       background-position-y: -140px;
       border-radius: 50%;
       border: solid 3px #fff;
-      &:hover {
-        border-color: rgb(25, 118, 240);
-      }
     }
   }
 
@@ -119,7 +116,7 @@
     position: relative;
     font-size: 30px;
     padding: 1 rem 0;
-    font-weight: 400;
+    font-weight: 300;
     color: #fff;
     text-decoration: none;
     @include easeOut;

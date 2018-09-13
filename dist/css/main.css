@@ -41,14 +41,14 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(73, 73, 73, 0.8);
     list-style: none;
     transform: translate3d(100%, 0, 0);
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(86, 86, 86, 0.8);
     transform: translate3d(-100%, 0, 0);
     transition: all 0.5s ease-out; }
     .menu-branding.show {
@@ -63,8 +63,6 @@
       background-position-y: -140px;
       border-radius: 50%;
       border: solid 3px #fff; }
-      .menu-branding .portrait:hover {
-        border-color: #1976f0; }
   .menu .nav-item {
     transform: translate3d(0px, 0, 0);
     transition: all 0.5s ease-out; }
@@ -75,7 +73,7 @@
     position: relative;
     font-size: 30px;
     padding: 1 rem 0;
-    font-weight: 400;
+    font-weight: 300;
     color: #fff;
     text-decoration: none;
     transition: all 0.5s ease-out; }
@@ -86,8 +84,8 @@
   box-sizing: border-box; }
 
 body {
-  background: black;
-  color: #fdfdfd;
+  background: #565656;
+  color: #fff;
   height: 100%;
   margin: 0;
   font-family: "Arial", Helvetica, sans-serif;
@@ -104,7 +102,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(0, 0, 0, 0.8); }
+      background: rgba(86, 86, 86, 0.8); }
 
 h1,
 h2,
@@ -120,7 +118,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2 rem 1 rem;
-    background: rgba(5, 5, 5, 0.5); }
+    background: rgba(91, 91, 91, 0.5); }
 
 a {
   color: #fff;
@@ -132,17 +130,17 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: rgba(2, 2, 2, 0.89); }
+  color: #000; }
 
 main {
   padding: 6rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 2rem; }
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: rgba(2, 2, 2, 0.89);
+        color: #d7cec7;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
@@ -151,3 +149,92 @@ main {
       margin-bottom: 2rem;
       padding: 0.2 rem 1 rem;
       background: rgba(255, 255, 255, 0.5); }
+
+.about-info {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr); }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 10%;
+    border: #d7cec7 3px solid; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info .job-1 {
+    grid-area: job1; }
+  .about-info .job-2 {
+    grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
+  .about-info .job {
+    background: #636363;
+    padding: 0.5rem;
+    border-bottom: #d7cec7 5px solid; }
+  .about-info .work {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3, 1fr); }
+    .about-info .work img {
+      width: 100%;
+      border: 3px #fff solid; }
+  .about-info .projects {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "bioimage bio bio" "job1 job2 job3"; }
+    .about-info .projects img {
+      width: 50%;
+      border: 3px #fff solid; }
+      .about-info .projects img:hover {
+        opacity: 0.5;
+        border-color: #d7cec7;
+        transition: all 0.5s ease-out; }
+  .about-info #main-footer {
+    text-align: center;
+    padding: 1 rem;
+    background: #3d3d3d;
+    color: #fff;
+    height: 60px; }
+
+@media screen and (min-width: 501px) and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+    main ul.menu-nav,
+    main div.menu-branding {
+      float: none;
+      width: 100%;
+      min-height: 0; }
+      main ul.menu-nav.show,
+      main div.menu-branding.show {
+        transform: translate3d(0, 0, 0); }
+    main .menu-nav {
+      height: 75vh;
+      transform: translate3d(-100%, 0, 0);
+      font-size: 24px; }
+    main .menu-branding {
+      height: 25vh;
+      transform: translate3d(100%, 0, 0); }
+    main .portrait {
+      background: url("../img/headshot.jpg");
+      height: 150px;
+      width: 150px; }
+  .about-info {
+    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem;
+      font-size: 5rem; }
+  .projects {
+    grid-template-columns: 1fr; } }

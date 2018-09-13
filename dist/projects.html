@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <title>Nick Poist Portfolio</title>
+    <title>My Projects</title>
 </head>
 
-<body id="bg-img">
+<body>
     <header>
         <div class="menu-btn">
             <div class="btn-line"></div>
@@ -24,7 +24,7 @@
                 <div class="portrait"></div>
             </div>
             <ul class="menu-nav">
-                <li class="nav-item current">
+                <li class="nav-item">
                     <a href="index.html" class="nav-link">
                         Home
                     </a>
@@ -34,7 +34,7 @@
                         About Me
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item current">
                     <a href="projects.html" class="nav-link">
                         My Projects
                     </a>
@@ -45,23 +45,34 @@
         </nav>
     </header>
 
-    <main id="home">
+    <main id="work">
         <h1 class="lg-heading">
-            <span class="text-secondary">Nick</span> <span class="text-secondary">Poist</span>
+            My
+            <span class="text-secondary"></span>Projects</span>
         </h1>
         <h2 class="sm-heading">
-            Mechanical Engineer, Aspiring Programmer, Opportunity Seeker
+            Examples of Some of My Previous Work
         </h2>
-        <div class="icons">
-            <a href=https://www.linkedin.com/in/nickpoist/>
-            <i class="fab fa-linkedin fa-2x"></i>
-            </a>
+        <div class="about-info">
+            <img src=img/projects/robot.png alt="Nick Poist" class="bio-image">
+            <div class="bio">
+                <h3 class="text-secondary">Brain Surgery Simulation Robot</h3>
+                <p>The main construction of this project is a 3-DOF robot that is controlled by Matlab code, an Arduino,
+                    and three motors. On the back of the robot, a camera is mounted that takes an image of whatever is in
+                    front of the robot. The camera acts as the eyes of the robot. Likewise, the Matlab code acts as the brain
+                    of the robot. Once the image from the camera is sent to Matlab, it is able to process the image and detect
+                    the fiducials. Once it knows the location of the fiducials, the motors act as the arms of the robot and
+                    moves the needle to the location identified by the Matlab code and then returns to its original position.
+                </p>
+            </div>
 
-
-        </div>
     </main>
-    <script src="js/main.js">
-    </script>
+
+    <footer id="main-footer">
+        Made by Nick Poist
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
