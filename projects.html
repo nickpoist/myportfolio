@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>My Projects</title>
+</head>
+
+<body>
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        About Me
+                    </a>
+                </li>
+                <li class="nav-item current">
+                    <a href="projects.html" class="nav-link">
+                        My Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <main id="projects">
+        <h1 class="lg-heading">
+            My
+            <span class="text-secondary">Projects</span>
+        </h1>
+        <h2 class="sm-heading">
+            Examples of Some of My Previous Work
+        </h2>
+        <div class="projects-info">
+            <img src=img/projects/robot.png alt="Nick Poist" class="robot-image">
+            <div class="about1">
+                <h3 class="text-secondary">Brain Surgery Simulation Robot</h3>
+                <p>The main construction of this project is a 3-DOF robot that is controlled by Matlab code, an
+                    Arduino,and three motors. On the back of the robot, a camera is mounted that takes an image of
+                    whatever is in front of the robot. The camera acts as the eyes of the robot. Likewise, the Matlab
+                    code acts as the brain of the robot. Once the image from the camera is sent to Matlab, it is able
+                    to process the image and detect the fiducials. Once it knows the location of the fiducials, the
+                    motors act as the arms of the robot and moves the needle to the location identified by the Matlab
+                    code and then returns to its original position.</p>
+            </div>
+            <img src=img/projects/capstone1.png alt="Nick Poist" class="design-image">
+            <div class="about2">
+                <h3 class="text-secondary">Capstone Design Project</h3>
+                <p>The Shooter Tracker was a semester long project of a basketball return system. The system operated
+                    with a Raspberry Pi in
+                    conjuction with and Arduino Uno. The system used HSV Color segmentation to analyze a users position
+                    on the court and return a ball to them.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="main-footer">
+        Created with HTML, CSS, and JS by Nick Poist Design &copy; 2018
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
