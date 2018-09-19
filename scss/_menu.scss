@@ -11,7 +11,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: #ffffff;
     &:hover {
       background-color: rgb(25, 118, 240);
     }
@@ -19,19 +19,22 @@
     @include easeOut;
   }
 
-  // Rotate Menu
+  // Rotate Into X With Menu Lines
   &.close {
     transform: rotate(-180deg);
 
     .btn-line {
+      // Line 1 - Rotate
       &:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
       }
 
+      // Line 2 - Hide
       &:nth-child(2) {
         opacity: 0;
       }
 
+      // Line 3 - Rotate
       &:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
       }
@@ -44,6 +47,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+
   visibility: hidden;
 
   &.show {
@@ -67,37 +71,34 @@
     padding: 0;
     background: rgba(darken($primary-color, 5), 0.8);
     list-style: none;
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(0, -100%, 0);
     @include easeOut;
 
     &.show {
-      //slide from right
+      // Slide in from top
       transform: translate3d(0, 0, 0);
     }
   }
 
-  // Brand
+  // Branding Side
   &-branding {
     background: rgba($primary-color, 0.8);
-    transform: translate3d(-100%, 0, 0);
+    transform: translate3d(0, 100%, 0);
     @include easeOut;
 
     &.show {
-      //slide from left
+      // Slide in from bottom
       transform: translate3d(0, 0, 0);
     }
 
     .portrait {
-      width: 300px;
-      height: 300px;
-      background: url(../img/headshot.jpg);
-
-      background-size: center;
-      background-size: 120%;
-      background-position-x: -30px;
-      background-position-y: -140px;
+      width: 250px;
+      height: 250px;
+      background: url("../img/portrait.png");
+      background-position: center;
+      background-size: cover;
       border-radius: 50%;
-      border: solid 3px #fff;
+      border: solid 3px $secondary-color;
     }
   }
 
@@ -106,8 +107,12 @@
     @include easeOut;
 
     &.show {
-      //slide from left
+      // Slide in from right
       transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
     }
   }
 
@@ -115,14 +120,22 @@
     display: inline-block;
     position: relative;
     font-size: 30px;
-    padding: 1 rem 0;
+    text-transform: uppercase;
+    padding: 1rem 0;
     font-weight: 300;
-    color: #fff;
+    color: set-text-color($primary-color);
     text-decoration: none;
     @include easeOut;
 
     &:hover {
-      color: rgb(25, 118, 240);
+      color: $secondary-color;
     }
+  }
+}
+
+// Delay each nav item slide by 0.1s
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
   }
 }
